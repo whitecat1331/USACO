@@ -88,8 +88,9 @@ print("'\\t' - tab \t character")
 print(
     "'\\' - backslash created by escaping the escape character and make it function normally"
 )
-print('" - print a double quote in a string literal defined with double quotes')
-print("' - print a single quote in a string literal defined with single quotes")
+print("'\\\"' - print a double quote in a string literal defined with double quotes")
+print('\'\\\'\' - print a single quote in a string literal defined with single quotes')
+print("In the previous example, the single quote, backslash, and next two single quotes are escaped")
 
 # String Repetition
 print(

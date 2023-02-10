@@ -64,6 +64,38 @@ print(
     'This is an example with single quotes for the main "string" and double quotes for the inner "string".'
 )
 
+# Escaping Characters
+print("The backlash is a special character called an escape character.")
+print(
+    "The backslah is used to escape the character meaning and give it extra functionality within the string."
+)
+print(
+    "Some escape characters will also stop the functionality that a special character might already have and treat it as a normal printable string character"
+)
+print(
+    "The backslash is already a special character, you need to escape the first backslash to print one backslash"
+)
+# uncomment next line
+# print("This is a backlash: \")
+print(
+    "This will result in an error since python thinks we are trying to escape the double quotation mark"
+)
+print("This is a backslash: \\")
+print("Not all characters can be escaped for extra functionality.")
+print("Some of the most common escape characters are: ")
+print("'\\n' - newline \ncharacter")
+print("'\\t' - tab \t character")
+print(
+    "'\\' - backslash created by escaping the escape character and make it function normally"
+)
+print('" - print a double quote in a string literal defined with double quotes')
+print("' - print a single quote in a string literal defined with single quotes")
+
+# String Repetition
+print(
+    "Strings can also easily be copied by multiplying the string by the integer number of copies\n"
+    * 3
+)
 
 # Printing multiple strings and values
 print("You can print multiple values and variables within one print statement.")
@@ -75,6 +107,7 @@ print("Each value in the print statement needs to be separated by a comma.")
 print(
     "Python is an excellent programming language when it comes to easily manipulating strings."
 )
+
 
 # String concatenation
 print("Concatenation means joining or combining two or more strings.")

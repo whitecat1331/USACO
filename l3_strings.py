@@ -1,4 +1,5 @@
 # String Intro
+print("String Intro")
 print(
     "A String in python and in most programming languages is going to be stored in memory as a series or 'string' of characters"
 )
@@ -8,6 +9,7 @@ print(
 )
 
 # String Example
+print("\nString Examples")
 print("Strings in python typically represent just plain text. For Example: ")
 first_name = "Bruce"
 last_name = "Banner"
@@ -24,8 +26,8 @@ or
 print(multi_line_string)
 
 # Escaping Strings
-escaping_prompt = """
-As stated before, a single or double quote can be used to create a string. It is up to personal preference on which is used, 
+print("\nEscaping Strings")
+escaping_prompt = """As stated before, a single or double quote can be used to create a string. It is up to personal preference on which is used, 
 however my preferece is to use double quotes for the main string
 Whichever you use, it is important to stay consistent, exspecially when trying to 'nest' strings.
 From the source code, you can see to print out a double quotation mark, a backslash was needed
@@ -65,6 +67,7 @@ print(
 )
 
 # Escaping Characters
+print("\nEscaping Characters")
 print("The backlash is a special character called an escape character.")
 print(
     "The backslah is used to escape the character meaning and give it extra functionality within the string."
@@ -93,6 +96,7 @@ print('\'\\\'\' - print a single quote in a string literal defined with single q
 print("In the previous example, the single quote, backslash, and next two single quotes are escaped")
 
 # String Repetition
+print("\nString Repetition")
 print(
     "Strings can also easily be copied by multiplying the string by the integer number of copies\n"
     * 3
@@ -114,6 +118,7 @@ print(
 
 
 # String concatenation
+print("\nString Concatenation")
 print("Concatenation means joining or combining two or more strings.")
 print(
     "Concatenation can be used by adding the addition (+) operator between two strings."
@@ -132,6 +137,7 @@ concatenation_prompt = "The full_name is: " + full_name
 print(concatenation_prompt)
 
 # String Interpolation
+print("\nString Interpolation")
 print("Concatenation is one way to format strings based on the value of a variable.")
 print("Python also allows for strings to be formatted by other methods.")
 print("String Interpolation lets you use the format() method with a place holder {}")
@@ -161,6 +167,7 @@ print(
 )
 
 # f-Strings
+print("\n f-strings")
 print("Format strings, or f'' strings are a special type of string recently added to python")
 print("f-strings use curly brace to run an expression in the strings to format it. For example: ")
 thanos = "Thanos"
@@ -169,4 +176,35 @@ doom = "Doctor Doom"
 print(f"Some of the villians in advengers include: {doom}, {thanos}, {witch}")
 print("Which formatting method you use with strings is ultimately up to personal preferece")
 
+# Reviwing arrays or lists
+print("\nIntro to lists")
+print("Python does not have a techinal array, but it does have something similar called lists")
+print("A list is simply a named container, much like a variable, that can hold multiple values")
+villian_advengers = [thanos, witch, doom, "Loki"]
+print(f"The values of the list is: {villian_advengers}")
+print("To index into an individual item in a list, use index notation or []")
+print("Arrays start counting their index position at index zero (0)")
+print(f"The first villian in the array is {villian_advengers[0]}")
+print(f"The second item in the array is: {villian_advengers[1]}")
+print(f"To print from the last item of an array, use a negative index")
+print(f"The last item in the array is: {villian_advengers[-1]}")
+print(f"The second to last item in the array is: {villian_advengers[-2]}")
+
+# Strings as arrays or lists
+print("\nStrings as lists")
+print("A string is technically a linked-list of characters saved in your program")
+print("A linked-list can be though of as an array or a list")
+print("In other words, the String data type is an array or 'string' of linked characters")
+print("Knowing that Strings funcationally work the same as array, you can use array syntax to work with substrings")
+print("A substring is simply a small sub-section of a larger string. For example: ")
+main_string = "Hello, World!"
+print("Arrays and Strings both start counting their index position at index zero (0)")
+print("This means the first character in any string will always be at index 0")
+print("Each character or element after that will have an incremental index")
+print("Use index notation to print an indivudual character")
+print("The first letter in {} is: ".format(main_string) + main_string[0])
+print("In the previous print statement, both string interpolation and concatenation is used for formatting.")
+print("Another just as viable solution would be... ")
+print(f"The first letter in {main_string} is: {main_string[0]}")
+print(f"The second letter in {main_string} is: {main_string[1]}")
 

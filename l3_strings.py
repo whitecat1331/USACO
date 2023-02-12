@@ -98,6 +98,9 @@ print(
     * 3
 )
 
+print("In python, there are multiple ways to print and format strings in your program")
+
+
 # Printing multiple strings and values
 print("You can print multiple values and variables within one print statement.")
 print(
@@ -156,3 +159,14 @@ print(
 print(
     "Keyword arguments allow you to pass values to a function specific to the parameter or variable name even if it is passed out of order"
 )
+
+# f-Strings
+print("Format strings, or f'' strings are a special type of string recently added to python")
+print("f-strings use curly brace to run an expression in the strings to format it. For example: ")
+thanos = "Thanos"
+witch = "The Scarlet Witch"
+doom = "Doctor Doom"
+print(f"Some of the villians in advengers include: {doom}, {thanos}, {witch}")
+print("Which formatting method you use with strings is ultimately up to personal preferece")
+
+

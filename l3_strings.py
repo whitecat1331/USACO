@@ -176,9 +176,8 @@ doom = "Doctor Doom"
 print(f"Some of the villians in advengers include: {doom}, {thanos}, {witch}")
 print("Which formatting method you use with strings is ultimately up to personal preferece")
 
-# Reviwing arrays or lists
+# Reviewing arrays or lists
 print("\nIntro to lists")
-print("Python does not have a techinal array, but it does have something similar called lists")
 print("A list is simply a named container, much like a variable, that can hold multiple values")
 villian_advengers = [thanos, witch, doom, "Loki"]
 print(f"The values of the list is: {villian_advengers}")
@@ -186,9 +185,16 @@ print("To index into an individual item in a list, use index notation or []")
 print("Arrays start counting their index position at index zero (0)")
 print(f"The first villian in the array is {villian_advengers[0]}")
 print(f"The second item in the array is: {villian_advengers[1]}")
-print(f"To print from the last item of an array, use a negative index")
+print("To print from the last item of an array, use a negative index")
 print(f"The last item in the array is: {villian_advengers[-1]}")
 print(f"The second to last item in the array is: {villian_advengers[-2]}")
+print("List slicing allows the user to copy parts of the list")
+print("Slice syntax is list[start:end] where start is the beginning index and end is the last index (exclusive)")
+print(f"The second and third value of villian_advengers is: {villian_advengers[1:3]}")
+print("To copy from the start index to the end of the of the list use the syntax: list[start:]")
+print(f"The items after the first item are: {villian_advengers[1:]}")
+print("The syntax to copy from the start of the list to the ending index is: list[:end]")
+print(f"The first three items in the list are: {villian_advengers[:3]}")
 
 # Strings as arrays or lists
 print("\nStrings as lists")
@@ -198,13 +204,35 @@ print("In other words, the String data type is an array or 'string' of linked ch
 print("Knowing that Strings funcationally work the same as array, you can use array syntax to work with substrings")
 print("A substring is simply a small sub-section of a larger string. For example: ")
 main_string = "Hello, World!"
+list_representation_of_main_string = ['H','e','l','l','o',' ','W','o','r','l','d','!' ]
+print(f"the variables main_string: {main_string} and list_representation_of_main_string: {list_representation_of_main_string} are practically identical")
 print("Arrays and Strings both start counting their index position at index zero (0)")
 print("This means the first character in any string will always be at index 0")
 print("Each character or element after that will have an incremental index")
-print("Use index notation to print an indivudual character")
+print("Use index notation to print an individual character")
 print("The first letter in {} is: ".format(main_string) + main_string[0])
 print("In the previous print statement, both string interpolation and concatenation is used for formatting.")
 print("Another just as viable solution would be... ")
 print(f"The first letter in {main_string} is: {main_string[0]}")
 print(f"The second letter in {main_string} is: {main_string[1]}")
+print(f"The last word in main_string is {main_string[7:]}")
+print(f"The first word in main_string is: {main_string[:7]}")
 
+# Comparing String
+print("You can use any comparision operator with strings")
+s1 = "Hello"
+s2 = "Hello"
+s3 = "World"
+print(f"s1 = {s1}")
+print(f"s2 = {s2}")
+print(f"s3 = {s3}")
+print("The == and != operators will compare to see if the strings are exactly equal or not equal.")
+print(f"s1 == s2: {s1 == s2}")
+print(f"s1 == s2: {s2 == s3}")
+print(f"s1 != s2: {s1 != s3}")
+print(f"s1 == s2: {s2 != s3}")
+print("The <, <=, >, >= operators are used to compare based on alphabetical order")
+print(f"s1 < s2: {s1 < s2}")
+print(f"s1 < s3: {s1 < s3}")
+print(f"s1 > s2: {s1 > s2}")
+print(f"s1 > s3: {s1 > s3}")

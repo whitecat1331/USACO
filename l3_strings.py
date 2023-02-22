@@ -41,7 +41,7 @@ sys.stdout.write(email)
 sys.stdout.write("\n\n")
 
 # Escaping Strings
-print("Escaping Strings")
+sys.stdout.write("Escaping Strings")
 escaping_prompt = """As stated before, a single or double quote can be used to create a string. It is up to personal preference on which is used, 
 however my preferece is to use double quotes for the main string.
 Whichever you use, it is important to stay consistent, exspecially when trying to 'nest' strings.
@@ -127,59 +127,74 @@ sys.stdout.write(
 
 # String Formatting
 sys.stdout.write(
-    "\nFormatting strings\n There are also multple methods for dynamically formatinng a string based on a variable\n"
+    "\nFormatting strings\nThere are also multiple methods for dynamically formatinng a string based on a variable\n\n"
 )
 
 # String concatenation
+sys.stdout.write("Method 1: String Concatenation\n")
 first_name = "Peter"
 last_name = "Parker"
-print("Method 1: String Concatenation")
-print("Concatenation means joining or combining two or more strings.")
-print(
-    "Concatenation can be used by adding the addition (+) operator between two strings."
+string_concatenation_prompt = """Concatenation means joining or combining two or more strings.
+Concatenation can be used by adding the addition (+) operator between two strings.
+String variables can also be concatenated with a string to format the string.
+The first example concatenates this prompt with the first and last name added to the end.
+The second example concatenates this prompt with the first and last name with a formatted space between.
+The last example concatenates this prompt with the string 'The full_name is: ' and the full name.
+Examples:\n"""
+
+string_concatenation_prompt = (
+    string_concatenation_prompt + first_name + last_name + "\n"
 )
-full_name = first_name + last_name
-print("The full name is:", full_name)
-print("Notice when we use commas to print multiple values, a space was added for us.")
-print("Concatenation is going to literally join the two strings so no space is added.")
-print("One solution could be to concatenate a space between the two variables.")
+string_concatenation_prompt += first_name + " " + last_name + "\n"
 full_name = first_name + " " + last_name
-print("The full name is:", full_name)
-print(
-    "You can also concatenate everything you want to say into one variable and print that out."
-)
-concatenation_prompt = "The full_name is: " + full_name
-print(concatenation_prompt)
+string_concatenation_prompt += "The full_name is: " + full_name + "\n\n"
+sys.stdout.write(string_concatenation_prompt)
+
+# Concatenation with non-String types
+# Uncomment next line to cause error
+# sys.stdout.write("This will attempt to concatenate a string with an int: " + 100)
+sys.stdout.write("Concatenation with non-String types\n")
+non_string_concatenation_prompt = """Python only knows how to concatenate two strings.
+Anything other than a string will need to be converted to the string data type, or simply a string representation of that type.
+Attempting to concatenate a String and a Non-String type will result in an error.
+
+Running the Line: sys.stdout.write("This will attempt to concatenate a string with an int: " + 100) 
+Will produce the Error:
+Traceback (most recent call last):
+  File "/home/patrickloyd/work/USACO/l3_strings.py", line 154, in <module>
+    sys.stdout.write("This will attempt to concatenate a string with an int: " + 100)
+TypeError: can only concatenate str (not "int") to str
+
+Solution:
+Any "primtive" data type in python can easily be converted to a string using the str() function\n
+Example:\n"""
+non_string_concatenation_prompt += "Concat an integer: " + str(100) + "\n"
+non_string_concatenation_prompt += "Concat a double: " + str(3.14) + "\n"
+non_string_concatenation_prompt += "Concat a boolean: " + str(True) + "\n\n"
+sys.stdout.write(non_string_concatenation_prompt)
+
 
 # String Interpolation
-print("\nString Interpolation")
-print("Concatenation is one way to format strings based on the value of a variable.")
-print("Python also allows for strings to be formatted by other methods.")
-print("String Interpolation lets you use the format() method with a place holder {}")
-print(
-    "Some of the advengers includes: {}, {}, and {}".format(
-        full_name, "Thor", "Spider-Man"
-    )
+sys.stdout.write("Method 2: String Interpolation\n")
+string_interpolation_prompt = """Concatenation is one way to format strings based on the value of a variable.
+Python also allows for strings to be formatted by other methods.
+String Interpolation lets you use the format() method with a place holder {} for any value.
+Example:\n"""
+string_interpolation_prompt += "Some of the advengers includes: {}, {}, and {}".format(
+    full_name, "Thor", "Spider-Man"
 )
-print(
-    "Using String Interpolation, you are able to add a placeholder or curly braces to the string."
-)
-print(
-    "The format function can later be used to pass as many values as there are placeholders to that new string"
-)
-
-print(
-    "Remembering the order of a large amount of placeholders can be tedious, so python allow you to name placehodlers as well"
-)
-print("You can the pass a keyword argument to set the value of that named placeholder")
-print(
-    "A few villians to the advengers are: {Thanos}, {Doom}, {Witch}".format(
+string_interpolation_prompt += """Using String Interpolation, you are able to add a placeholder or curly braces to the string.
+    "The format function can later be used to pass as many values as there are placeholders to that new string
+    Remembering the order of a large amount of placeholders can be tedious, so python allow you to name placehodlers as well
+You can create a keyword argument by naming the placeholder {named_placeholder}.
+Keyword arguments allow you to pass values to a function specific to the parameter or variable name even if it is passed out of order.
+Example:\n"""
+string_interpolation_prompt += (
+    "A few villians to the advengers are: {Thanos}, {Doom}, {Witch}\n\n".format(
         Thanos="Thanos", Witch="The Scarlet Witch", Doom="Doctor Doom"
     )
 )
-print(
-    "Keyword arguments allow you to pass values to a function specific to the parameter or variable name even if it is passed out of order"
-)
+sys.stdout.write(string_interpolation_prompt)
 
 # f-Strings
 print("\n f-strings")

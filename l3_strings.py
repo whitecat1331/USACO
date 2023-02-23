@@ -26,7 +26,7 @@ sys.stdout.write(add_newlines_prompt)
 
 # String Examples
 sys.stdout.write(
-    "String Examples\nStrings in python typically represent just plain text. For Example:\n"
+    "String Examples\nStrings in python typically represent any plain text. For Example:\n"
 )
 first_name = "Bruce"
 address = "1234 This Does Not Exist Ln."
@@ -41,7 +41,7 @@ sys.stdout.write(email)
 sys.stdout.write("\n\n")
 
 # Escaping Strings
-sys.stdout.write("Escaping Strings")
+sys.stdout.write("Escaping Strings\n")
 escaping_prompt = """As stated before, a single or double quote can be used to create a string. It is up to personal preference on which is used, 
 however my preferece is to use double quotes for the main string.
 Whichever you use, it is important to stay consistent, exspecially when trying to 'nest' strings.
@@ -72,7 +72,7 @@ SyntaxError: unterminated string literal (detected at line 13)
 sys.stdout.write(quotation_error)
 
 # Resolving Quotation Error
-sys.stdout.write("Resolving Quotation Errors")
+sys.stdout.write("Resolving Quotation Errors\n")
 resolving_quotation_error = """The same issue would occur if we switched the double quotes and single quotes in the previous example
 One practice to avoid this issue is to use double quotes as your main String literal and then using single quotes to represent a nested string or to print out a single quote
 The other method would be to use single quotes as your main string literal and then use double quotes inside the string literal.\n"""
@@ -88,9 +88,9 @@ sys.stdout.write(
 sys.stdout.write("Special Characters:\n")
 python_special_characters = """It is always important to remeber some of the most common special characters to use them effectively and without any issues.
 Characters in python that already have special functionality:
-" - used to open or close a single line string 
+" - used to open or close a single line string
 ' - used to open or close a single line string
-\"\"\" - used to open or close a multi-line string 
+\"\"\" - used to open or close a multi-line string
 ''' - used to open or close a multi-line string
 \\ - escapes the functionality of the character to the right\n\n"""
 sys.stdout.write(python_special_characters)
@@ -100,10 +100,10 @@ sys.stdout.write(python_special_characters)
 # print("'\' - print a backslash)
 # This will result in an error since python thinks we are trying to escape the double quotation mark
 sys.stdout.write("Escaping Characters:\n")
-escaping_characters_prompt = """Somtimes you will still need to print the same type of quotation mark within a string defined with that same type of mark.
-The backslash is a special character called an escape character. 
+escaping_characters_prompt = """Sometimes you will still need to print the same type of quotation mark within a string defined with that same type of mark.
+The backslash is a special character called an escape character.
 The backslash is used to escape original characters meaning and give it extra functionality within the string.
-Some escape characters, such as the single and double quotation marks, 
+Some escape characters, such as the single and double quotation marks,
 will also stop original functionality that a character might already have and treat it as a normal printable string character.\n\n
 Run Line: print("'\\' - print a backslash")
 This will result in an error since python thinks we are trying to escape the double quotation mark
@@ -127,7 +127,8 @@ sys.stdout.write(
 
 # String Formatting
 sys.stdout.write(
-    "\nFormatting strings\nThere are also multiple methods for dynamically formatinng a string based on a variable\n\n"
+    """\nFormatting strings\nThere are also multiple methods for dynamically formatinng a string based on a variable
+Which method you chose is ultimately up to personal preferece.\n\n"""
 )
 
 # String concatenation
@@ -197,48 +198,38 @@ string_interpolation_prompt += (
 sys.stdout.write(string_interpolation_prompt)
 
 # f-Strings
-print("\n f-strings")
-print(
-    "Format strings, or f'' strings are a special type of string recently added to python"
-)
-print(
-    "f-strings use curly brace to run an expression in the strings to format it. For example: "
-)
+sys.stdout.write("Method 3: f-strings\n")
+fstring_promp = """Format strings, or f'' strings are a special type of string recently added to python
+f-strings use curly brace to run an expression in the strings to format it. For example: """
 thanos = "Thanos"
 witch = "The Scarlet Witch"
 doom = "Doctor Doom"
-print(f"Some of the villians in advengers include: {doom}, {thanos}, {witch}")
-print(
-    "Which formatting method you use with strings is ultimately up to personal preferece"
+fstring_promp += (
+    f"Some of the villians in advengers include: {doom}, {thanos}, {witch}\n\n"
 )
+sys.stdout.write(fstring_promp)
 
 # Reviewing arrays or lists
-print("\nIntro to lists")
-print(
-    "A list is simply a named container, much like a variable, that can hold multiple values"
-)
-villian_advengers = [thanos, witch, doom, "Loki"]
-print(f"The values of the list is: {villian_advengers}")
-print("To index into an individual item in a list, use index notation or []")
-print("Arrays start counting their index position at index zero (0)")
-print(f"The first villian in the array is {villian_advengers[0]}")
-print(f"The second item in the array is: {villian_advengers[1]}")
-print("To print from the last item of an array, use a negative index")
-print(f"The last item in the array is: {villian_advengers[-1]}")
-print(f"The second to last item in the array is: {villian_advengers[-2]}")
-print("List slicing allows the user to copy parts of the list")
-print(
-    "Slice syntax is list[start:end] where start is the beginning index and end is the last index (exclusive)"
-)
-print(f"The second and third value of villian_advengers is: {villian_advengers[1:3]}")
-print(
-    "To copy from the start index to the end of the of the list use the syntax: list[start:]"
-)
-print(f"The items after the first item are: {villian_advengers[1:]}")
-print(
-    "The syntax to copy from the start of the list to the ending index is: list[:end]"
-)
-print(f"The first three items in the list are: {villian_advengers[:3]}")
+villain_advengers = [thanos, witch, doom, "Loki"]
+sys.stdout.write("Intro to lists\n")
+reviewing_lists_prompt = f"""A list is simply a named container, much like a variable, that can hold multiple values
+The values of the list is: {villain_advengers}
+To index into an individual item in a list, use index notation or []
+Arrays start counting their index position at index zero (0)
+The first villain in the array is {villain_advengers[0]}
+The second item in the array is: {villain_advengers[1]}
+To print from the last item of an array, use a negative index
+The last item in the array is: {villain_advengers[-1]}
+The second to last item in the array is: {villain_advengers[-2]}
+List slicing allows the user to copy parts of the list
+Slice syntax is list[start:end] where start is the beginning index and end is the last index (exclusive)
+The second and third value of villain_advengers is: {villain_advengers[1:3]}
+To copy from the start index to the end of the of the list use the syntax: list[start:]
+The items after the first item are: {villain_advengers[1:]}
+The syntax to copy from the start of the list to the ending index is: list[:end]
+The first three items in the list are: {villain_advengers[:3]}\n\n"""
+sys.stdout.write(reviewing_lists_prompt)
+
 
 # Strings as arrays or lists
 print("\nStrings as lists")

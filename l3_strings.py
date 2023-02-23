@@ -17,7 +17,7 @@ sys.stdout.write(print_string_prompt)
 # Add Newlines
 sys.stdout.write("Add Newlines\n")
 add_newlines_prompt = """Notice in the last example, no newline was added after 'Printing Strings'. 
-'sys.stdout.write()' does not add a new line at the end of the print stream. 
+'sys.stdout.write()' does not add a new line at the end of the print stream.
 A newline character can be added at the end using '\\n'.
 Another alternative is to use multi-line strings as the return character will be printed as a newline
 
@@ -232,18 +232,8 @@ sys.stdout.write(reviewing_lists_prompt)
 
 
 # Strings as arrays or lists
-print("\nStrings as lists")
-print("A string is technically a linked-list of characters saved in your program")
-print("A linked-list can be though of as an array or a list")
-print(
-    "In other words, the String data type is an array or 'string' of linked characters"
-)
-print(
-    "Knowing that Strings funcationally work the same as array, you can use array syntax to work with substrings"
-)
-print("A substring is simply a small sub-section of a larger string. For example: ")
-main_string = "Hello, World!"
-list_representation_of_main_string = [
+hello_string = "Hello, World!"
+list_representation_of_hello_string = [
     "H",
     "e",
     "l",
@@ -257,25 +247,26 @@ list_representation_of_main_string = [
     "d",
     "!",
 ]
-print(
-    f"the variables main_string: {main_string} and list_representation_of_main_string: {list_representation_of_main_string} are practically identical"
-)
-print("Arrays and Strings both start counting their index position at index zero (0)")
-print("This means the first character in any string will always be at index 0")
-print("Each character or element after that will have an incremental index")
-print("Use index notation to print an individual character")
-print("The first letter in {} is: ".format(main_string) + main_string[0])
-print(
-    "In the previous print statement, both string interpolation and concatenation is used for formatting."
-)
-print("Another just as viable solution would be... ")
-print(f"The first letter in {main_string} is: {main_string[0]}")
-print(f"The second letter in {main_string} is: {main_string[1]}")
-print(f"The last word in main_string is {main_string[7:]}")
-print(f"The first word in main_string is: {main_string[:7]}")
+sys.stdout.write("Strings as lists\n")
+string_lists_prompt = f"""A string is technically a linked-list of characters saved in your program
+A linked-list can be though of as an array or a list
+In other words, the String data type is an array or 'string' of linked characters
+Knowing that Strings funcationally work the same as array, you can use array syntax to work with substrings
+A substring is simply a small sub-section of a larger string. For example:
+the variables hello_string: {hello_string} and list_representation_of_hello_string: {list_representation_of_hello_string} are practically identical
+Arrays and Strings both start counting their index position at index zero (0)
+This means the first character in any string will always be at index 0
+Each character or element after that will have an incremental index
+Use index notation to print an individual character
+The first letter in {hello_string} is: {hello_string[0]}
+The second letter in {hello_string} is: {hello_string[1]}
+The last letter in {hello_string} is: {hello_string[-1]}
+The last word in hello_string is {hello_string[7:]}
+The first word in hello_string is: {hello_string[:7]}\n\n"""
+sys.stdout.write(string_lists_prompt)
 
 # Comparing String
-print("You can use any comparision operator with strings")
+sys.stdout.write("Comparing Strings\n")
 s1 = "Hello"
 s2 = "Hello"
 s3 = "World"

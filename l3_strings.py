@@ -50,7 +50,7 @@ This is because I am using double quotation marks to represent the opening and c
 This also means if a loose double quotation mark is placed in the string to try to print out the double quote,
 the Python interpreter will think that the quotation mark is ending the first string and everythhing to the right of the
 ended string will try to be interpreted")\n"""
-print(escaping_prompt)
+sys.stdout.write(escaping_prompt)
 
 # Example of using only a double quote in string
 # uncomment one of the next two line and run the example
@@ -65,7 +65,7 @@ Running Line: sys.stdout.write("This is a quotation mark ("), it is used to repr
 Output:
 
   File "/home/patrickloyd/work/USACO/l3_strings.py", line 13
-    print("This is a quotation mark ("), it is used to represent a string in python") 
+    sys.stdout.write("This is a quotation mark ("), it is used to represent a string in python") 
                                                                                    ^
 SyntaxError: unterminated string literal (detected at line 13)
 """
@@ -97,7 +97,7 @@ sys.stdout.write(python_special_characters)
 
 # Escaping Characters
 # Uncomment next line for example
-# print("'\' - print a backslash)
+# sys.stdout.write("'\' - print a backslash)
 # This will result in an error since python thinks we are trying to escape the double quotation mark
 sys.stdout.write("Escaping Characters:\n")
 escaping_characters_prompt = """Sometimes you will still need to print the same type of quotation mark within a string defined with that same type of mark.
@@ -105,7 +105,7 @@ The backslash is a special character called an escape character.
 The backslash is used to escape original characters meaning and give it extra functionality within the string.
 Some escape characters, such as the single and double quotation marks,
 will also stop original functionality that a character might already have and treat it as a normal printable string character.\n\n
-Run Line: print("'\\' - print a backslash")
+Run Line: sys.stdout.write("'\\' - print a backslash")
 This will result in an error since python thinks we are trying to escape the double quotation mark
 Not all characters can be escaped for extra functionality
 Some of the most common escape characters are:
@@ -239,6 +239,7 @@ list_representation_of_hello_string = [
     "l",
     "l",
     "o",
+    ",",
     " ",
     "W",
     "o",
@@ -270,22 +271,27 @@ sys.stdout.write("Comparing Strings\n")
 s1 = "Hello"
 s2 = "Hello"
 s3 = "World"
-print(f"s1 = {s1}")
-print(f"s2 = {s2}")
-print(f"s3 = {s3}")
-print(
-    "The == and != operators will compare to see if the strings are exactly equal or not equal."
-)
-print(f"s1 == s2: {s1 == s2}")
-print(f"s1 == s2: {s2 == s3}")
-print(f"s1 != s2: {s1 != s3}")
-print(f"s1 == s2: {s2 != s3}")
-print("The <, <=, >, >= operators are used to compare based on alphabetical order")
-print(f"s1 < s2: {s1 < s2}")
-print(f"s1 < s3: {s1 < s3}")
-print(f"s1 <= s2: {s1 <= s2}")
-print(f"s1 <= s3: {s1 <= s3}")
-print(f"s1 > s2: {s1 > s2}")
-print(f"s1 > s3: {s1 > s3}")
-print(f"s1 >= s2: {s1 >= s2}")
-print(f"s1 >= s3: {s1 >= s3}")
+s4 = f"{s1} {s3}"
+comparing_strings_prompt = f"""s1 = {s1}
+s2 = {s2}
+s3 = {s3}
+The == and != operators will compare to see if the strings are exactly equal or not equal."
+s1 == s2: {s1 == s2}
+s1 == s2: {s2 == s3}
+s1 != s2: {s1 != s3}
+s1 == s2: {s2 != s3}
+The <, <=, >, >= operators are used to compare based on alphabetical order
+s1 < s2: {s1 < s2}
+s1 < s3: {s1 < s3}
+s1 <= s2: {s1 <= s2}
+s1 <= s3: {s1 <= s3}
+s1 > s2: {s1 > s2}
+s1 > s3: {s1 > s3}
+s1 >= s2: {s1 >= s2}
+s1 >= s3: {s1 >= s3}
+The 'in' operator is used to check if value is in a sequence or collection
+Is 'world' in '{s4}'? {"world" in s4}
+Is '{s3}' in '{s4}'? {s3 in s4}
+This syntax also applies to a list
+Is 'Loki' in {villain_advengers}? {'Loki' in villain_advengers}\n\n"""
+sys.stdout.write(comparing_strings_prompt)

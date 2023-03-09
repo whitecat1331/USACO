@@ -14,6 +14,17 @@ print_string_prompt = (
 )
 sys.stdout.write(print_string_prompt)
 
+# Ascii Chart
+# A formatted table can be found within the lesson slides
+sys.stdout.write("Ascii chart")
+possible_characters = 128  # There are only 128 bits allocated for the Ascii chart
+ascii_prompt = ""
+for i in range(possible_characters):
+    ascii_prompt += f"The Ascii value for {i} is {chr(i)}\n"
+ascii_prompt += "Depending on your terminal, The full output for this table might not display all characters\n\n"
+sys.stdout.write(ascii_prompt)
+
+
 # Add Newlines
 sys.stdout.write("Add Newlines\n")
 add_newlines_prompt = """Notice in the last example, no newline was added after 'Printing Strings'. 

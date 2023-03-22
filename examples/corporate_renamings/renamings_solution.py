@@ -35,12 +35,12 @@ class CorporateReplacements:
                 current_line = f.readline()
                 for old_word, new_word in self.replacement_map.items():
                     if old_word in current_line:
-                        print(old_word, current_line)
-                        self.new_buffer += current_line.replace(old_word, new_word)
+                        current_line = current_line.replace(old_word, new_word)
+                            
+                self.new_buffer += current_line
 
     def print_buff(self):
         sys.stdout.write(self.new_buffer + '\n')
-        print("The buffer printed")
 
     def print_map(self):
         sys.stdout.write(str(self.replacement_map) + '\n')
@@ -48,7 +48,6 @@ class CorporateReplacements:
 
 def main():
     cr = CorporateReplacements("corporate_renamings.txt")
-    cr.print_map()
     cr.print_buff()
 
 if __name__ == "__main__":

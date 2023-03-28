@@ -17,7 +17,7 @@ sys.stdout.write(print_string_prompt)
 # Ascii Chart
 # A formatted table can be found within the lesson slides
 sys.stdout.write("Ascii chart")
-possible_characters = 128  # There are only 128 bits allocated for the Ascii chart
+possible_characters = 128  # There are only 128 numbers allocated for the Ascii chart
 ascii_prompt = ""
 for i in range(possible_characters):
     ascii_prompt += f"The Ascii value for {i} is {chr(i)}\n"
@@ -260,6 +260,7 @@ list_representation_of_hello_string = [
     "!",
 ]
 sys.stdout.write("Strings as lists\n")
+
 string_lists_prompt = f"""A string is technically a linked-list of characters saved in your program
 A linked-list can be though of as an array or a list
 In other words, the String data type is an array or 'string' of linked characters

@@ -220,7 +220,7 @@ fstring_promp += (
 )
 sys.stdout.write(fstring_promp)
 
-# Reviewing arrays or lists
+# Intro to arrays and lists
 villain_advengers = [thanos, witch, doom, "Loki"]
 sys.stdout.write("Intro to lists\n")
 reviewing_lists_prompt = f"""A list is simply a named container, much like a variable, that can hold multiple values
@@ -241,6 +241,35 @@ The syntax to copy from the start of the list to the ending index is: list[:end]
 The first three items in the list are: {villain_advengers[:3]}\n\n"""
 sys.stdout.write(reviewing_lists_prompt)
 
+# Common Methods with lists
+sys.stdout.write("Common methods with lists" + '\n')
+# Adds an element at the end of the list.
+villain_advengers.append("Kang the Conqueror")
+# Returns a copy of the list
+copy_of_villians = villain_advengers.copy()
+sys.stdout.write(str(copy_of_villians) + '\n')
+# Returns the number of elements with the specified value
+sys.stdout.write(str(villain_advengers.count("Thanos") ) + '\n')
+# Add the lement of a list (or any iterable), to the end of the current list
+more_villians = ["Ronan", "Red Skull"]
+villain_advengers.extend(more_villians)
+sys.stdout.write(str(villain_advengers) + '\n')
+# Returns the index of the first element with the specified value
+sys.stdout.write(str(villain_advengers.index("Loki")) + '\n')
+# Adds an element at the specified position
+villain_advengers.insert(0, "Taskmaster")
+sys.stdout.write(str(villain_advengers) + '\n')
+# Removes the element at the specifed position
+villain_advengers.pop(2)
+sys.stdout.write(str(villain_advengers) + '\n')
+# Removes the first item with the specified value
+villain_advengers.remove("Thanos")
+# Reverses the order of the list
+villain_advengers.reverse()
+sys.stdout.write(str(villain_advengers) + '\n')
+# Sorts the list
+villain_advengers.sort()
+sys.stdout.write(str(villain_advengers) + '\n\n')
 
 # Strings as arrays or lists
 hello_string = "Hello, World!"

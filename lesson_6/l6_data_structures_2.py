@@ -19,10 +19,10 @@ sys.stdout.write(sets_prompt)
 # Unordered Examples
 the_witch = "The Scarlet Witch"
 sys.stdout.write("Unordered Examples:\n")
-avengers = {"Thor",the_witch, "Hulk"}
+set_of_avengers = {"Thor",the_witch, "Hulk"}
 ordered_numbers = {1,2,3,4,5,6,7}
 unordered_examples_prompt = f"""The order that the write statement prints sets will be random each time. 
-avengers: {avengers}
+avengers: {set_of_avengers}
 ordered_numbers: {ordered_numbers}
 
 """
@@ -44,8 +44,8 @@ set.remove() - removes an item from the set and throws an exception if item is n
 """
 sys.stdout.write(unchangeable_examples_prompt)
 villians = {"Thanos", "Loki"}
-avengers.remove(the_witch)
-sys.stdout.write(str(avengers) + '\n')
+set_of_avengers.remove(the_witch)
+sys.stdout.write(str(set_of_avengers) + '\n')
 villians.add(the_witch)
 sys.stdout.write(str(villians) + '\n\n')
 
@@ -225,20 +225,48 @@ dict.items() - Returns a list containing a tuple for each key value pair
 dict.keys() - Returns a list containing dictiaonry's keys
 dict.update(dict2) - updates a dictionary with specified key-value pairs
 dict.values() - Returns a list of all the values of a dictionay
-pop() - Remove the element with specified key
-popItem() Removees the last inserted key-value pair
+dict.pop() - Remove the element with specified key
+dict.popItem() Removes the last inserted key-value pair
 dict.setdefault(key, default="None") - set the key to the default value if the key is not specified in the dictionary
-dict.has_key(key) - returns True if the dictionary contains the specified key
+key in dictionary - returns True if the dictionary contains the specified key
+del dict[key] - remove the key-value pair at the specified key
 
 """
 sys.stdout.write(dict_methods_prompt)
 
+# dict.copy() - set the variable to reference the dictionary performing a shallow copy which can have unexpected results
 deep_avengers_copy = avengers.copy()
-# This will set the variable to reference the dictionary performing a shallow copy which can have unexpected results
 shallow_avengers_copy = avengers
 shallow_avengers_copy["Nick Fury"] = "Nick Fury"
-sys.stdout.write(f"Any changes to a shallow copy will reflect in the original object {avengers['Nick Fury']}\n\n")
-
-
+sys.stdout.write(f"dict.copy()\nAny changes to a shallow copy will reflect in the original object {avengers['Nick Fury']}\n")
+# dict.get(key, default="None") - Returns the value of the specified key
+sys.stdout.write(f"dict.get()\nReturn a value from the dictionary by key {avengers.get('Spider-Man')}\n")
+sys.stdout.write(f"Return a value from the dictionary by key {ranked_avengers.get(2)}\n")
+sys.stdout.write("It is up to personal preference on how you choose to index dictionaries\n")
+# dict.items() - Returns a list containing a tuple for each key value pair
+sys.stdout.write(f"dict.items()\nThe key value pairs for advengers are: {avengers.items()}\n" )
+# dict.keys() - Returns a list containing dictiaonry's keys
+sys.stdout.write(f"dict.keys()\nThe keys in avengers are: {avengers.keys()}\n")
+# dict.update(dict2) - updates a dictionary with specified key-value pairs
+avengers.update({"Captain America": "Steve Rogers"})
+sys.stdout.write(f"dict.update()\nThe key-value pairs in avengers is now: {avengers}\n")
+# dict.values() - Returns a list of all the values of a dictionay
+sys.stdout.write(f"dict.values()\nThe values for avengers are: {avengers.values()}\n")
+# dict.pop() - Remove the last element with specified key.
+sys.stdout.write(f"dict.pop()\nRemoved: {avengers.pop('Spider-Man')}\n")
+sys.stdout.write(f"The key-value pairs in avengers is now: {avengers}\n")
+# dict.popItem() - Removes the last inserted key-value pair
+sys.stdout.write(f"dict.popItem()\nRemoved: {avengers.popitem()}\n")
+sys.stdout.write(f"The key-value pairs in avengers is now: {avengers}\n")
+# dict.setdefault(key, default="None") - set the key to the default value if the key is not specified in the dictionary
+sys.stdout.write(f"dict.setdefault()\nThe value for Black-Widow is: {avengers.setdefault('Black-Widow', 'Natasha Romanoff')}\n")
+# key in dictionary - returns True if the dictionary contains the specified key
+sys.stdout.write(f"key in dictionary\nDoes Black-Window exist in avengers? {'Black-Widow' in avengers}\n")
+# del dict[key] - remove the key-value pair at the specified key
+del avengers["Iron-Man"]
+sys.stdout.write(f"del dict[key]\nThe key-value pairs in avengers is now: {avengers}\n")
+# dict.clear() - Remove all the elements from the dictionary
+avengers.clear()
+sys.stdout.write(f"The key-value pairs in avengers is now: {avengers}\n\n")
 # Traversing Dictionaries
 

@@ -268,5 +268,38 @@ sys.stdout.write(f"del dict[key]\nThe key-value pairs in avengers is now: {aveng
 # dict.clear() - Remove all the elements from the dictionary
 avengers.clear()
 sys.stdout.write(f"The key-value pairs in avengers is now: {avengers}\n\n")
+
 # Traversing Dictionaries
+traversing_dictionaries_prompt = f"""Traversing Dictionaries
+Sometimes you do not know the exact keys you need to index into the value that you are looking for.
+There are mulitple ways to traverse a dictionary to locate all of the keys and values.
+Traversing or iterating simply means going through each individual item within a container one by one.
+Which method you chose will ultimately come down to personal prefernce and team convention.
+Remembering the basics of flow control.
+While loops are considered a conditional loop and are generally useful for controling 
+a section of code based on some apbitrary condition such as with a menu screen.
+In a typical menu, the loop will continue the program as long as the user does not want to quit the program.
+for indexing or traversing a dictionay (and really any container type) a for loop is preffered.
+Python has a unique for loop compared to other languages.
+A for loop in python is simalar to an enhanced for loop in other languages such as Java.
+With that being said, all that a Pythonista needs to understand to work with for loops 
+is that they are specifically designed for traversing an iterable type; 
+and if you learn another programming language, the for loop will likely be different than Python's for loop.
+
+"""
+sys.stdout.write(traversing_dictionaries_prompt)
+
+# iterating through each key value pair
+for rank_number, avenger_info in ranked_avengers.items():
+    sys.stdout.write(f"rank_number: {rank_number} avenger_info: {avenger_info}\n")
+
+# iterating through each key
+for rank_number in ranked_avengers.keys():
+    sys.stdout.write(f"The ranked numbers in ranked_avengers is: {rank_number} and the value at the key is {ranked_avengers[rank_number]}\n")
+
+# itering through the values
+for avenger in ranked_avengers.values():
+    sys.stdout.write(f"The current avenger is: {avenger}\n")
+
+
 

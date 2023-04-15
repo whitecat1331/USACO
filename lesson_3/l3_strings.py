@@ -63,10 +63,9 @@ the Python interpreter will think that the quotation mark is ending the first st
 ended string will try to be interpreted")\n"""
 sys.stdout.write(escaping_prompt)
 
-# Example of using only a double quote in string
-# uncomment one of the next two line and run the example
-# sys.stdout.write("This is a quotation mark ("), it is used to represent a string in python")
-# sys.stdout.write('This is a quotation mark ('), it is used to represent a string in python')
+# Example of using same quote to declare string in the string definition
+# sys.stdout.write("This is a quotation mark (") it is used to represent a string in python")
+# sys.stdout.write('This is a quotation mark (') it is used to represent a string in python')
 
 # this error, or something similar will be printed when the program is run
 quotation_error = """

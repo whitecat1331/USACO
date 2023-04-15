@@ -297,7 +297,7 @@ for rank_number, avenger_info in ranked_avengers.items():
 for rank_number in ranked_avengers.keys():
     sys.stdout.write(f"The ranked numbers in ranked_avengers is: {rank_number} and the value at the key is {ranked_avengers[rank_number]}\n")
 
-# itering through the values
+# iterating through the values
 for avenger in ranked_avengers.values():
     sys.stdout.write(f"The current avenger is: {avenger}\n")
 

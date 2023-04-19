@@ -4,7 +4,7 @@ import sys
 sys.stdout.write("String Intro\n")
 string_intro_prompt = """A String in python and in most programming languages is going to be stored in memory as a series or 'string' of single characters.
 We can represent a string on a single line in python by using either a 'single quotation' mark or a \"double quotation mark.
-A large string can also be defined over multiple lines be using either '''triple single quotationmarks''' or \"\"\"trible double quotation marks\"\"\"\n\n"""
+A large string can also be defined over multiple lines be using either '''triple single quotation marks''' or \"\"\"triple double quotation marks\"\"\"\n\n"""
 sys.stdout.write(string_intro_prompt)
 
 # Printing  String
@@ -14,13 +14,13 @@ print_string_prompt = (
 )
 sys.stdout.write(print_string_prompt)
 
-# Ascii Chart
+# ASCII Chart
 # A formatted table can be found within the lesson slides
-sys.stdout.write("Ascii chart")
-possible_characters = 128  # There are only 128 numbers allocated for the Ascii chart
+sys.stdout.write("ASCII chart")
+possible_characters = 128  # There are only 128 numbers allocated for the ASCII chart
 ascii_prompt = ""
 for i in range(possible_characters):
-    ascii_prompt += f"The Ascii value for {i} is {chr(i)}\n"
+    ascii_prompt += f"The ASCII value for {i} is {chr(i)}\n"
 ascii_prompt += "Depending on your terminal, The full output for this table might not display all characters\n\n"
 sys.stdout.write(ascii_prompt)
 
@@ -54,12 +54,12 @@ sys.stdout.write("\n\n")
 # Escaping Strings
 sys.stdout.write("Escaping Strings\n")
 escaping_prompt = """As stated before, a single or double quote can be used to create a string. It is up to personal preference on which is used, 
-however my preferece is to use double quotes for the main string.
-Whichever you use, it is important to stay consistent, exspecially when trying to 'nest' strings.
+however my preference is to use double quotes for the main string.
+Whichever you use, it is important to stay consistent, especially when trying to 'nest' strings.
 From the source code, you can see to print out a double quotation mark, a backslash was needed
 This is because I am using double quotation marks to represent the opening and closing of my string
 This also means if a loose double quotation mark is placed in the string to try to print out the double quote,
-the Python interpreter will think that the quotation mark is ending the first string and everythhing to the right of the
+the Python interpreter will think that the quotation mark is ending the first string and everything to the right of the
 ended string will try to be interpreted")\n"""
 sys.stdout.write(escaping_prompt)
 
@@ -96,7 +96,7 @@ sys.stdout.write(
 
 # Special Characters
 sys.stdout.write("Special Characters:\n")
-python_special_characters = """It is always important to remeber some of the most common special characters to use them effectively and without any issues.
+python_special_characters = """It is always important to remember some of the most common special characters to use them effectively and without any issues.
 Characters in python that already have special functionality:
 " - used to open or close a single line string
 ' - used to open or close a single line string
@@ -124,7 +124,6 @@ Some of the most common escape characters are:
 '\\t' - tab \t character\n"""
 sys.stdout.write(escaping_characters_prompt)
 
-# LunarVim Formatter will not stop changing the next two examples, be sure to uncomment before merging to master
 # sys.stdout.write("'\\\"' - print a double quote in a string literal defined with double quotes")
 # sys.stdout.write('\'\\\'\' - print a single quote in a string literal defined with single quotes\n')
 
@@ -137,8 +136,8 @@ sys.stdout.write(
 
 # String Formatting
 sys.stdout.write(
-    """\nFormatting strings\nThere are also multiple methods for dynamically formatinng a string based on a variable
-Which method you chose is ultimately up to personal preferece.\n\n"""
+    """\nFormatting strings\nThere are also multiple methods for dynamically formatting a string based on a variable
+Which method you chose is ultimately up to personal preference.\n\n"""
 )
 
 # String concatenation
@@ -177,7 +176,7 @@ Traceback (most recent call last):
 TypeError: can only concatenate str (not "int") to str
 
 Solution:
-Any "primtive" data type in python can easily be converted to a string using the str() function\n
+Any "primitive" data type in python can easily be converted to a string using the str() function\n
 Example:\n"""
 non_string_concatenation_prompt += "Concat an integer: " + str(100) + "\n"
 non_string_concatenation_prompt += "Concat a double: " + str(3.14) + "\n"
@@ -191,17 +190,17 @@ string_interpolation_prompt = """Concatenation is one way to format strings base
 Python also allows for strings to be formatted by other methods.
 String Interpolation lets you use the format() method with a place holder {} for any value.
 Example:\n"""
-string_interpolation_prompt += "Some of the advengers includes: {}, {}, and {}".format(
+string_interpolation_prompt += "Some of the avengers includes: {}, {}, and {}".format(
     full_name, "Thor", "Spider-Man"
 )
 string_interpolation_prompt += """Using String Interpolation, you are able to add a placeholder or curly braces to the string.
     "The format function can later be used to pass as many values as there are placeholders to that new string
-    Remembering the order of a large amount of placeholders can be tedious, so python allow you to name placehodlers as well
+    Remembering the order of a large amount of placeholders can be tedious, so python allow you to name placeholders as well
 You can create a keyword argument by naming the placeholder {named_placeholder}.
 Keyword arguments allow you to pass values to a function specific to the parameter or variable name even if it is passed out of order.
 Example:\n"""
 string_interpolation_prompt += (
-    "A few villians to the advengers are: {Thanos}, {Doom}, {Witch}\n\n".format(
+    "A few villains to the avengers are: {Thanos}, {Doom}, {Witch}\n\n".format(
         Thanos="Thanos", Witch="The Scarlet Witch", Doom="Doctor Doom"
     )
 )
@@ -209,66 +208,66 @@ sys.stdout.write(string_interpolation_prompt)
 
 # f-Strings
 sys.stdout.write("Method 3: f-strings\n")
-fstring_promp = """Format strings, or f'' strings are a special type of string recently added to python
+fstring_prompt = """Format strings, or f'' strings are a special type of string recently added to python
 f-strings use curly brace to run an expression in the strings to format it. For example: """
 thanos = "Thanos"
 witch = "The Scarlet Witch"
 doom = "Doctor Doom"
-fstring_promp += (
-    f"Some of the villians in advengers include: {doom}, {thanos}, {witch}\n\n"
+fstring_prompt += (
+    f"Some of the villains in avengers include: {doom}, {thanos}, {witch}\n\n"
 )
-sys.stdout.write(fstring_promp)
+sys.stdout.write(fstring_prompt)
 
 # Intro to arrays and lists
-villain_advengers = [thanos, witch, doom, "Loki"]
+villain_avengers = [thanos, witch, doom, "Loki"]
 sys.stdout.write("Intro to lists\n")
 reviewing_lists_prompt = f"""A list is simply a named container, much like a variable, that can hold multiple values
-The values of the list is: {villain_advengers}
+The values of the list is: {villain_avengers}
 To index into an individual item in a list, use index notation or []
 Arrays start counting their index position at index zero (0)
-The first villain in the array is {villain_advengers[0]}
-The second item in the array is: {villain_advengers[1]}
+The first villain in the array is {villain_avengers[0]}
+The second item in the array is: {villain_avengers[1]}
 To print from the last item of an array, use a negative index
-The last item in the array is: {villain_advengers[-1]}
-The second to last item in the array is: {villain_advengers[-2]}
+The last item in the array is: {villain_avengers[-1]}
+The second to last item in the array is: {villain_avengers[-2]}
 List slicing allows the user to copy parts of the list
 Slice syntax is list[start:end] where start is the beginning index and end is the last index (exclusive)
-The second and third value of villain_advengers is: {villain_advengers[1:3]}
+The second and third value of villain_avengers is: {villain_avengers[1:3]}
 To copy from the start index to the end of the of the list use the syntax: list[start:]
-The items after the first item are: {villain_advengers[1:]}
+The items after the first item are: {villain_avengers[1:]}
 The syntax to copy from the start of the list to the ending index is: list[:end]
-The first three items in the list are: {villain_advengers[:3]}\n\n"""
+The first three items in the list are: {villain_avengers[:3]}\n\n"""
 sys.stdout.write(reviewing_lists_prompt)
 
 # Common Methods with lists
 sys.stdout.write("Common methods with lists" + '\n')
 # Adds an element at the end of the list.
-villain_advengers.append("Kang the Conqueror")
+villain_avengers.append("Kang the Conqueror")
 # Returns a copy of the list
-copy_of_villians = villain_advengers.copy()
-sys.stdout.write(str(copy_of_villians) + '\n')
+copy_of_villains = villain_avengers.copy()
+sys.stdout.write(str(copy_of_villains) + '\n')
 # Returns the number of elements with the specified value
-sys.stdout.write(str(villain_advengers.count("Thanos") ) + '\n')
-# Add the lement of a list (or any iterable), to the end of the current list
-more_villians = ["Ronan", "Red Skull"]
-villain_advengers.extend(more_villians)
-sys.stdout.write(str(villain_advengers) + '\n')
+sys.stdout.write(str(villain_avengers.count("Thanos") ) + '\n')
+# Add the element of a list (or any iterable), to the end of the current list
+more_villains = ["Ronan", "Red Skull"]
+villain_avengers.extend(more_villains)
+sys.stdout.write(str(villain_avengers) + '\n')
 # Returns the index of the first element with the specified value
-sys.stdout.write(str(villain_advengers.index("Loki")) + '\n')
+sys.stdout.write(str(villain_avengers.index("Loki")) + '\n')
 # Adds an element at the specified position
-villain_advengers.insert(0, "Taskmaster")
-sys.stdout.write(str(villain_advengers) + '\n')
-# Removes the element at the specifed position
-villain_advengers.pop(2)
-sys.stdout.write(str(villain_advengers) + '\n')
+villain_avengers.insert(0, "Taskmaster")
+sys.stdout.write(str(villain_avengers) + '\n')
+# Removes the element at the specified position
+villain_avengers.pop(2)
+sys.stdout.write(str(villain_avengers) + '\n')
 # Removes the first item with the specified value
-villain_advengers.remove("Thanos")
+villain_avengers.remove("Thanos")
 # Reverses the order of the list
-villain_advengers.reverse()
-sys.stdout.write(str(villain_advengers) + '\n')
+villain_avengers.reverse()
+sys.stdout.write(str(villain_avengers) + '\n')
 # Sorts the list
-villain_advengers.sort()
-sys.stdout.write(str(villain_advengers) + '\n\n')
+villain_avengers.sort()
+sys.stdout.write(str(villain_avengers) + '\n\n')
 
 # Strings as arrays or lists
 hello_string = "Hello, World!"
@@ -292,7 +291,7 @@ sys.stdout.write("Strings as lists\n")
 string_lists_prompt = f"""A string is technically a linked-list of characters saved in your program
 A linked-list can be though of as an array or a list
 In other words, the String data type is an array or 'string' of linked characters
-Knowing that Strings funcationally work the same as array, you can use array syntax to work with substrings
+Knowing that Strings functionally work the same as array, you can use array syntax to work with substrings
 A substring is simply a small sub-section of a larger string. For example:
 the variables hello_string: {hello_string} and list_representation_of_hello_string: {list_representation_of_hello_string} are practically identical
 Arrays and Strings both start counting their index position at index zero (0)
@@ -333,5 +332,5 @@ The 'in' operator is used to check if value is in a sequence or collection
 Is 'world' in '{s4}'? {"world" in s4}
 Is '{s3}' in '{s4}'? {s3 in s4}
 This syntax also applies to a list
-Is 'Loki' in {villain_advengers}? {'Loki' in villain_advengers}\n\n"""
+Is 'Loki' in {villain_avengers}? {'Loki' in villain_avengers}\n\n"""
 sys.stdout.write(comparing_strings_prompt)

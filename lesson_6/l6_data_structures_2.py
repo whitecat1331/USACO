@@ -6,7 +6,7 @@ sets_prompt = """A set in Python is a type of container/collection that is
 unordered, unchangeable, and does not allow duplicate values. 
 
 Unordered - the items in a set do not have a defined order 
-and cannot be reffered to by index or key.
+and cannot be referred to by index or key.
 
 Unchangeable - items cannot be changed meaning once the value is added to the set it will not change it's value.
 items can be removed from the set, however the item itself cannot be changed.
@@ -43,28 +43,28 @@ set.remove() - removes an item from the set and throws an exception if item is n
 
 """
 sys.stdout.write(unchangeable_examples_prompt)
-villians = {"Thanos", "Loki"}
+villains = {"Thanos", "Loki"}
 set_of_avengers.remove(the_witch)
 sys.stdout.write(str(set_of_avengers) + '\n')
-villians.add(the_witch)
-sys.stdout.write(str(villians) + '\n\n')
+villains.add(the_witch)
+sys.stdout.write(str(villains) + '\n\n')
 
 # Duplicates Not Allowed Examples
 duplicate_set = {1, 1, 2, 2, 3, 3, 4, 4}
-villians.add(the_witch)
+villains.add(the_witch)
 sys.stdout.write("Duplicates Not Allowed Examples\n")
-sys.stdout.write(f"Duplicates will not be added within a set\nduplicate_set: {duplicate_set}\nvillians: {villians}\n\n")
+sys.stdout.write(f"Duplicates will not be added within a set\nduplicate_set: {duplicate_set}\nvillains: {villains}\n\n")
 
 # Queues
 queue_prompt = """Queues are similar to a stack. 
 Remember, a stack is a data structure that uses a FILO (First In Last Out) model.
 A Queue is another type of data structure that uses a FIFO (First In First Out) model. 
-Just like a stack of pancackes, the first pancake added to the stack is on the bottom and will be the last one eaten.
+Just like a stack of pancakes, the first pancake added to the stack is on the bottom and will be the last one eaten.
 A queue is just like waiting in line to an amusement park where the fist one in the queue is the first one to ride the ride. 
 
 Python does not have a queue data type built-in to the language.
-There are still a few techiniques and libraries that can be used to emulate a queue using Python data structures.
-The closest built-in data structure Python offeres that is simlar to a queue is a list.
+There are still a few techniques and libraries that can be used to emulate a queue using Python data structures.
+The closest built-in data structure Python offers that is similar to a queue is a list.
 """
 sys.stdout.write(queue_prompt)
 
@@ -141,8 +141,8 @@ The value of a dictionary can hold any type of object or value.
 
 Dictionary Declaration:
 Dictionaries are declared using curly braces {}. 
-The key and values are sperated by a colon :.
-Each key-value pair is sperated with a comma ,.
+The key and values are separated by a colon :.
+Each key-value pair is separated with a comma ,.
 
 Example: 
     my_dict = {"key": "value", "another_key": "another_value"}
@@ -182,7 +182,7 @@ sys.stdout.write(f"avengers: {avengers}\nUS_currency: {US_currency}\n\n")
 # Nested Dictionaries
 sys.stdout.write("Nested Dictionaries\n")
 ranked_avengers = {
-        1: {"first_name": "Tony", "last_name": "Stark", "alias": "Iron-Man", "abilities": ["propultion thrusters", "plasma shot", "Jarvis"]},
+        1: {"first_name": "Tony", "last_name": "Stark", "alias": "Iron-Man", "abilities": ["propulsion thrusters", "plasma shot", "Jarvis"]},
         2: {"first_name": "Peter", "last_name": "Parker", "alias": "Spider-Man", "abilities": ["spin webs", "swing", "spidey sense"]},
         3: {"first_name": "Bruce", "last_name": "Banner", "alias": "Hulk", "abilities": ["smash", "smash", "smash"]}
         }
@@ -198,7 +198,7 @@ With so much nesting, it can be easy to get lost in a large dictionary.
 Luckily, python gives us other tools to effectively navigate a dictionary in our program.
 
 
-Most manuel dictionary indexing is done with the developer knowing the values to index to.
+Most manual dictionary indexing is done with the developer knowing the values to index to.
 If the developer created the dictionary, then they should know how to index into it.
 If a developer is working with a large dictionary that was externally imported into the program,
 then reading the documentation associated with the imported data would be the best way to find what keys to index to.
@@ -222,9 +222,9 @@ dict.clear() - Remove all the elements from the dictionary
 dict.copy() - Returns a deep copy of the dictionary Note: setting dictionaries equal will perform a shallow copy")
 dict.get(key, default="None") - Returns the value of the specified key
 dict.items() - Returns a list containing a tuple for each key value pair
-dict.keys() - Returns a list containing dictiaonry's keys
+dict.keys() - Returns a list containing dictionary's keys
 dict.update(dict2) - updates a dictionary with specified key-value pairs
-dict.values() - Returns a list of all the values of a dictionay
+dict.values() - Returns a list of all the values of a dictionary
 dict.pop() - Remove the element with specified key
 dict.popItem() Removes the last inserted key-value pair
 dict.setdefault(key, default="None") - set the key to the default value if the key is not specified in the dictionary
@@ -244,13 +244,13 @@ sys.stdout.write(f"dict.get()\nReturn a value from the dictionary by key {avenge
 sys.stdout.write(f"Return a value from the dictionary by key {ranked_avengers.get(2)}\n")
 sys.stdout.write("It is up to personal preference on how you choose to index dictionaries\n")
 # dict.items() - Returns a list containing a tuple for each key value pair
-sys.stdout.write(f"dict.items()\nThe key value pairs for advengers are: {avengers.items()}\n" )
-# dict.keys() - Returns a list containing dictiaonry's keys
+sys.stdout.write(f"dict.items()\nThe key value pairs for avengers are: {avengers.items()}\n" )
+# dict.keys() - Returns a list containing dictionary's keys
 sys.stdout.write(f"dict.keys()\nThe keys in avengers are: {avengers.keys()}\n")
 # dict.update(dict2) - updates a dictionary with specified key-value pairs
 avengers.update({"Captain America": "Steve Rogers"})
 sys.stdout.write(f"dict.update()\nThe key-value pairs in avengers is now: {avengers}\n")
-# dict.values() - Returns a list of all the values of a dictionay
+# dict.values() - Returns a list of all the values of a dictionary
 sys.stdout.write(f"dict.values()\nThe values for avengers are: {avengers.values()}\n")
 # dict.pop() - Remove the last element with specified key.
 sys.stdout.write(f"dict.pop()\nRemoved: {avengers.pop('Spider-Man')}\n")
@@ -272,16 +272,16 @@ sys.stdout.write(f"The key-value pairs in avengers is now: {avengers}\n\n")
 # Traversing Dictionaries
 traversing_dictionaries_prompt = f"""Traversing Dictionaries
 Sometimes you do not know the exact keys you need to index into the value that you are looking for.
-There are mulitple ways to traverse a dictionary to locate all of the keys and values.
+There are multiple ways to traverse a dictionary to locate all of the keys and values.
 Traversing or iterating simply means going through each individual item within a container one by one.
-Which method you chose will ultimately come down to personal prefernce and team convention.
+Which method you chose will ultimately come down to personal preference and team convention.
 Remembering the basics of flow control.
-While loops are considered a conditional loop and are generally useful for controling 
-a section of code based on some apbitrary condition such as with a menu screen.
+While loops are considered a conditional loop and are generally useful for controlling 
+a section of code based on some arbitrary condition such as with a menu screen.
 In a typical menu, the loop will continue the program as long as the user does not want to quit the program.
-for indexing or traversing a dictionay (and really any container type) a for loop is preffered.
+for indexing or traversing a dictionary (and really any container type) a for loop is preferred.
 Python has a unique for loop compared to other languages.
-A for loop in python is simalar to an enhanced for loop in other languages such as Java.
+A for loop in python is similar to an enhanced for loop in other languages such as Java.
 With that being said, all that a Pythonista needs to understand to work with for loops 
 is that they are specifically designed for traversing an iterable type; 
 and if you learn another programming language, the for loop will likely be different than Python's for loop.

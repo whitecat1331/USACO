@@ -26,6 +26,23 @@ class Deck:
         for card in self.deck:
             yield card.get_card()
 
+class PokerHand:
+    def __init__(self, name, cards):
+        self.name = name
+        self.cards = cards
+
+class PokerHandsSolution:
+    def __init__(self, file_of_hands):
+        with open(file_of_hands, 'r') as f:
+            for hands in f:
+                all_cards = hands.split()
+
+
+
+
+
+    
+
 for card in Deck().get_cards():
     print(card)
 

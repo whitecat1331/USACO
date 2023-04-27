@@ -8,8 +8,8 @@ class Card:
         self.value = value
         self.suit = suit
 
-    def get_card(self):
-        return f"{self.value}{self.suit}"
+    def print_card_info(self):
+        sys.stdout.write(f"{self.value}{self.suit}")
 
 
 class Deck:
@@ -22,28 +22,49 @@ class Deck:
     def get_deck(self):
         return self.deck
     
-    def get_cards(self):
+    def add_card(self, card):
+        self.deck.append(card)
+            
+    def print_cards(self):
         for card in self.deck:
-            yield card.get_card()
+            card.print_card_info()
 
-class PokerHand:
-    def __init__(self, name, cards):
+class PokerHand():
+    def __init__(self, name):
+        self.deck = Deck()
         self.name = name
-        self.cards = cards
+
+    def add_card(self, card):
+        self.deck.add_card(card)
+
+    def print_cards(self):
+        sys.stdout.write(f"\nPlayer: {self.name}\n")
+        self.deck.print_cards()
+
 
 class PokerHandsSolution:
     def __init__(self, file_of_hands):
+        player1 = PokerHand("Black")
+        player2 = PokerHand("White")
+        all_players = (player1, player2)
+
         with open(file_of_hands, 'r') as f:
             for hands in f:
                 all_cards = hands.split()
+                for i in range(len(all_cards)):
+                    if i < 5:
+                        player1.add_card(Card(all_cards[0], all_cards[1]))
+                    else:
+                        player2.add_card(Card(all_cards[0], all_cards[1]))
+            
+        for player in all_players:
+            player.print_cards()
+        sys.stdout.write('\n')
 
 
 
+INPUT_FILE = "sample_input.txt"
+poker_hands_solution = PokerHandsSolution(INPUT_FILE)    
 
-
-    
-
-for card in Deck().get_cards():
-    print(card)
 
 

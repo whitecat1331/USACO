@@ -15,6 +15,8 @@ class Card:
 class Deck:
     def __init__(self):
         self.deck = []
+
+    def fill_deck(self):
         for suit in Card.SUITS:
             for value in Card.VALUES:
                 self.deck.append(Card(value, suit))
@@ -50,12 +52,16 @@ class PokerHandsSolution:
 
         with open(file_of_hands, 'r') as f:
             for hands in f:
-                all_cards = hands.split()
-                for i in range(len(all_cards)):
-                    if i < 5:
-                        player1.add_card(Card(all_cards[0], all_cards[1]))
+                line_of_cards = hands.split()
+                card_count = 0
+                for input_card in line_of_cards:
+                    card = Card(input_card[0],input_card[1])
+                    if (card_count % 10) < 5:
+                        player1.add_card(card)
                     else:
-                        player2.add_card(Card(all_cards[0], all_cards[1]))
+                        player2.add_card(card)
+
+                    card_count += 1
             
         for player in all_players:
             player.print_cards()

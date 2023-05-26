@@ -15,6 +15,7 @@ and each line of text is at most 1,000 characters long.
 """
 
 class CorporateReplacements:
+
     def __init__(self, replacemnt_file):
         self.replacement_file = replacemnt_file
         self.replacement_map = {}
@@ -24,19 +25,30 @@ class CorporateReplacements:
         self.parse_file()
 
     def parse_file(self):
+        # Open file using context manager
         with open(self.replacement_file, "r") as f:
+            # set number of maps to the first number in file
             self.number_of_maps = int(f.readline())
+            # Create a map of the word to replace as the key and the word to replace with as the value
             for _ in range(self.number_of_maps):
+                # split the word to replace and work to replace with using the keywork to and store that as a list
                 line_list = f.readline().split("to")
+                # convert the list to a map and strip off any whitespace and quotation marks
                 self.replacement_map[line_list[0].strip().strip('"')] = line_list[1].strip().strip('"')
 
+            # read in how many lines should be checked for replacement 
             self.number_of_lines_remaining = int(f.readline())
+
+            # read in the line 
             for _ in range(self.number_of_lines_remaining):
+                # read current line 
                 current_line = f.readline()
+                # for each line, iterate through each old word and new word and replace if a match is found
                 for old_word, new_word in self.replacement_map.items():
                     if old_word in current_line:
                         current_line = current_line.replace(old_word, new_word)
                             
+                # append the new line to a buffer
                 self.new_buffer += current_line
 
     def print_buff(self):

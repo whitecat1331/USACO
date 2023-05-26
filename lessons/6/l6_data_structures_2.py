@@ -132,7 +132,7 @@ sys.stdout.write("Full: "+ str(q.full()) + '\n\n')
 
 # Dictionaries 
 sys.stdout.write("Dictionaries\n")
-dictionary_prompt = """A dictionary in Python is a built-in data type that allows for key value pairs.
+dictionary_explanation = """A dictionary in Python is a built-in data type that allows for key value pairs.
 Dictionaries are useful for containing data that is grouped in pairs.
 There are many practical uses for a dictionary in Python.
 Dictionaries can be indexed by key to return the grouped value. 
@@ -144,22 +144,19 @@ Dictionaries are declared using curly braces {}.
 The key and values are separated by a colon :.
 Each key-value pair is separated with a comma ,.
 
-Example: 
-    my_dict = {"key": "value", "another_key": "another_value"}
-
-The value of a dictionary can be accessed by key
-Example:
-print(my_dict["key"]) # prints value
-my_dict["key"] = "some_value"
-print(my_dict["key"]) # prints some_value
-
-Use Cases:
-When working with APIs, Python uses dictionaries to model JSON objects.
-They are useful anytime you have a key value pair you are trying to save in Python
 
 """
 
-sys.stdout.write(dictionary_prompt)
+sys.stdout.write(dictionary_explanation)
+
+# Dictionary Examples
+sys.stdout.write("Simple Dictionary Examples\n")
+my_dict = {"key": "value", "another_key": "another_value"}
+sys.stdout.write(my_dict["key"] + '\n') # prints value
+my_dict["key"] = "some_value" # change key to some_value
+sys.stdout.write(my_dict["key"] + "\n\n") # prints some_value
+
+
 
 # Dictionary Indexing
 sys.stdout.write("Dictionary Indexing\n")
@@ -189,7 +186,7 @@ ranked_avengers = {
 hulk_dict = ranked_avengers[3]
 hulk_abilities = hulk_dict["abilities"]
 hulk_first_ability = hulk_abilities[0]
-nested_dicts_prompt = f"""Dictionaries can hold any type of object as their value.
+nested_dicts_explanation = f"""Dictionaries can hold any type of object as their value.
 This means that dictionaries can also hold any container type as their value, including other dictionaries.
 If the value you initially index into is another container type, simply index into that type using that notation to index 
 into the individual value within the entire dictionary.
@@ -203,18 +200,19 @@ If the developer created the dictionary, then they should know how to index into
 If a developer is working with a large dictionary that was externally imported into the program,
 then reading the documentation associated with the imported data would be the best way to find what keys to index to.
 
-Hulk Dictionary: {ranked_avengers[3]}
-Hulk Abilities: {ranked_avengers[3]["abilities"]}
-Hulks First Ability: {ranked_avengers[3]["abilities"][0]}
-
-Each object can also be saved in a variable
-
-Hulk Dictionary: {hulk_dict}
-Hulk Abilities: {hulk_abilities}
-Hulks First Ability: {hulk_first_ability}
-
 """
-sys.stdout.write(nested_dicts_prompt)
+
+sys.stdout.write(nested_dicts_explanation)
+
+# Nested Dictionary Examples
+sys.stdout.write("Nested Dictionary Examples\n")
+sys.stdout.write(f"Hulk Dictionary: {ranked_avengers[3]}\n")
+sys.stdout.write(f"Hulk Abilities: {ranked_avengers[3]['abilities']}\n")
+sys.stdout.write(f"Hulks First Ability: {ranked_avengers[3]['abilities'][0]}\n")
+sys.stdout.write(f"Hulk Dictionary: {hulk_dict}\n")
+sys.stdout.write(f"Hulk Abilities: {hulk_abilities}\n")
+sys.stdout.write(f"Hulks First Ability: {hulk_first_ability}\n\n")
+
 
 # Dictionary Methods
 dict_methods_prompt = """Dictionary Methods
@@ -239,32 +237,44 @@ deep_avengers_copy = avengers.copy()
 shallow_avengers_copy = avengers
 shallow_avengers_copy["Nick Fury"] = "Nick Fury"
 sys.stdout.write(f"dict.copy()\nAny changes to a shallow copy will reflect in the original object {avengers['Nick Fury']}\n")
+
 # dict.get(key, default="None") - Returns the value of the specified key
 sys.stdout.write(f"dict.get()\nReturn a value from the dictionary by key {avengers.get('Spider-Man')}\n")
 sys.stdout.write(f"Return a value from the dictionary by key {ranked_avengers.get(2)}\n")
 sys.stdout.write("It is up to personal preference on how you choose to index dictionaries\n")
+
 # dict.items() - Returns a list containing a tuple for each key value pair
 sys.stdout.write(f"dict.items()\nThe key value pairs for avengers are: {avengers.items()}\n" )
+
 # dict.keys() - Returns a list containing dictionary's keys
 sys.stdout.write(f"dict.keys()\nThe keys in avengers are: {avengers.keys()}\n")
+
 # dict.update(dict2) - updates a dictionary with specified key-value pairs
 avengers.update({"Captain America": "Steve Rogers"})
 sys.stdout.write(f"dict.update()\nThe key-value pairs in avengers is now: {avengers}\n")
+
 # dict.values() - Returns a list of all the values of a dictionary
 sys.stdout.write(f"dict.values()\nThe values for avengers are: {avengers.values()}\n")
+
 # dict.pop() - Remove the last element with specified key.
 sys.stdout.write(f"dict.pop()\nRemoved: {avengers.pop('Spider-Man')}\n")
 sys.stdout.write(f"The key-value pairs in avengers is now: {avengers}\n")
+
 # dict.popItem() - Removes the last inserted key-value pair
 sys.stdout.write(f"dict.popItem()\nRemoved: {avengers.popitem()}\n")
 sys.stdout.write(f"The key-value pairs in avengers is now: {avengers}\n")
+
 # dict.setdefault(key, default="None") - set the key to the default value if the key is not specified in the dictionary
+
 sys.stdout.write(f"dict.setdefault()\nThe value for Black-Widow is: {avengers.setdefault('Black-Widow', 'Natasha Romanoff')}\n")
+
 # key in dictionary - returns True if the dictionary contains the specified key
 sys.stdout.write(f"key in dictionary\nDoes Black-Window exist in avengers? {'Black-Widow' in avengers}\n")
+
 # del dict[key] - remove the key-value pair at the specified key
 del avengers["Iron-Man"]
 sys.stdout.write(f"del dict[key]\nThe key-value pairs in avengers is now: {avengers}\n")
+
 # dict.clear() - Remove all the elements from the dictionary
 avengers.clear()
 sys.stdout.write(f"The key-value pairs in avengers is now: {avengers}\n\n")

@@ -1,43 +1,93 @@
 import sys
+from collections import defaultdict
+from copy import copy
+import string
 
-CHARS_IN_ALAPHABET = 26
+ALPHABET = string.ascii_lowercase
 
-with open("input.txt", "r") as f:
-    # read in integer for dictionary
-    words_in_dict = int(f.readline())
-
-    # add each word in a list
-    dict_words = [f.readline() for _ in range(words_in_dict)]
-
-    # read in the remaining lines
-    for encrypted_text in f.readlines():
-        decrypt_attempt = ""
-        for i in range(CHARS_IN_ALAPHABET):
-            for char in encrypted_text:
-                if char == " ":
-                    decrypt_attempt += " "
-                    continue
-                    
-                # subtract each position in letter by one 
+def load_num():
+    return int(sys.stdin.readline().rstrip())
 
 
-                # use dictionary to guess the letter map
+def valid_sub(enc, word, subs):
+    """Check if the a substituion dict is valid to convert
+    from enc to word."""
+    if len(enc) != len(word):
+        return False
 
-            # check if word is found in the string and print string
-            # The any() function takes an iterate
-            print(f"The attempt is: {decrypt_attempt}")
-            if any(dict_word in decrypt_attempt for dict_word in dict_words):
-                sys.std.write(decrypt_attempt + '\n')
+    for e, w in zip(enc, word):
+        if subs[e] and subs[e]!=w: 
+            return False
 
-            decrypt_attempt = ""
+    return True
+
+
+def create_sub(enc, word, subs):
+    """Create a new substitucion dict where the missing substitutions
+    to got from enc to word are added"""
+    new_subs = copy(subs)
+
+    for e, w in zip(enc, word):
+        if new_subs[e] == w:
+            continue
+
+        if new_subs[e] is not None:
+            raise ValueError
+
+        # No two letters can be reblaced by same letter
+        if w in new_subs.values():
+            raise ValueError
+        new_subs[e] = w
     
-    
-        # if no solution is found print an * for each char in the string
-        for char in encrypted_text:
-            if char == " ":
-                continue
-            decrypt_attempt += "*"
+    return new_subs
 
-        sys.stdout.write(decrypt_attempt + '\n')
+
+def decrypt(enc, words, subs=None):
+    """Recursive solution using backtracking"""
+    if subs is None:
+        subs = {c: None for c in ALPHABET}
+
+    for word in words[len(enc[0])]:
+        # Check word  is valid with current substitutions
+        if not valid_sub(enc[0], word, subs):
+            continue
+
+        # Create new substitution dict for the word
+        try:
+            new_subs = create_sub(enc[0], word, subs)
+        except ValueError:
+            continue
+ 
+        # This is the end of the search
+        if len(enc) == 1:
+            return [word]
         
+        # More words in the list .. keep searching
+        dec = decrypt(enc[1:], words, new_subs)
+        if dec is not None:
+            return [word]+dec
+        
+    return None
 
+
+
+if __name__ == '__main__':
+    print = sys.stdout.write
+    sys.stdin = open("input.txt", "r")
+    nwords = load_num()
+    
+    words = defaultdict(list)
+    for _ in range(nwords):
+        word = sys.stdin.readline().rstrip().lower()
+        words[len(word)].append(word)
+
+    for enc in sys.stdin:
+        enc = enc.split()
+        if len(enc) == 0:
+            break
+
+        dec = decrypt(enc, words)
+        if dec:
+            print(' '.join(dec) + '\n')
+        else:        
+            print(' '.join("*"*len(w) for w in enc) + '\n')

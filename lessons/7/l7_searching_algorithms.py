@@ -177,3 +177,61 @@ def infinite_recursion():
 # infinite_recursion() # RecursionError
 
 # Binary Search
+
+print("Binary Search\n\n")
+
+binary_search_explanation = """Binary search is considered a complex algorithm, but can be very useful once you see where it can be used.
+Binary search has a faster time complexity on average. 
+The Binary Search algorithm must start with a sorted array or list. 
+Binary search utilizes this fact to optimize where to search next.
+Recursion is typically used for Binary Search as it is a more complex algorithm.
+
+The steps for binary search are as follows:
+    1. The array must be sorted
+    2. Cut the array in half and check the middle value for the target value.
+    3. If the target value equals the middle value, return that index.
+    4. If the value does not equal, check if the target value is greater than or less than the middle value.
+    5. If the target value is less than the middle, than the assumption can be made it is not in the right half of the array meaning we now only need to search the left half.
+    6. If the target value is greater than the middle, than the assumption can be made it is not in the left half of the array meaning we now only need to search the right half.
+    7. Repeat steps 3-6 until either the target value is found or the algorithm gets to a single array size and still has not found the value.
+    8. Return -1 if the algorithm does not find the target value.
+
+Binary search can be confusing at first, but chances are you have already used this algorithm without even thinking about it.
+Think back to how you typically search through a dictionary for the definition of a word. 
+
+Similarities between a Dictionary Search and Binary Search:
+
+- A dictionary is already sorted.
+- First you typically divide the dictionary in half.
+- If your target word is farther in the dictionary than the middle word you indexed to, than you know you need to search in the right half of the dictionary.
+- If your target word is closer to the start of the dictionary than the middle word you indexed to, than you know you need to search in the left half of the dictionary.
+- Next you typically divide the chosen half again and compare the new page to the target word you are searching for.
+- This repeats until you either find the word or are unsuccessful in the word search. 
+
+"""
+print(binary_search_explanation)
+
+# Binary Search Example
+
+def binary_search(arr, target, low, high):
+    # Base case (failed search)
+    if(low > high):
+        return -1
+    # find mid-point of array
+    # forcing the midpoint to an integer will always round the midpoint to the left of an uneven list.
+    mid = int(low + (high - low) / 2)
+    # return index if target is found
+    if(arr[mid] == target):
+        return mid
+    # case when target is greater than the midpoint
+    if(target > arr[mid]):
+        return binary_search(arr, target, mid + 1, high)
+    # case when target is less than the midpoint
+    else:
+        return binary_search(arr, target, low, mid - 1)
+
+
+sorted_list = [1,3,5,7,9]
+binary_target_number = 3
+
+print(f"The target number is at index: {binary_search(sorted_list, binary_target_number, 0, len(sorted_list) - 1)}\n\n")

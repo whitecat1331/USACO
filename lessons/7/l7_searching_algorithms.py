@@ -41,7 +41,7 @@ print(f"The index of the target number is: {linear_search_index(list_of_numbers,
 linear_search_analysis = """Analysis
 1. The best case has the key in the first slot.
 2. The worst case occurs if the key is in the last slot or not in the list. In the worst case, all n elements must be examined.
-3. On average, the will be n/2 comparisons
+3. On average, there will be n/2 comparisons
 
 """
 print(linear_search_analysis)
@@ -79,6 +79,7 @@ print(recursion_explanation)
 # Recursion Examples
 print("Recursion Examples\n\n")
 
+print("simple_recursion\n\n")
 def simple_recursion(n):
     print(f"The current value of n is: {n}\n")
 
@@ -90,7 +91,6 @@ def simple_recursion(n):
     simple_recursion(n-1)
     return # this is implied but added for clarity
 
-print("simple_recursion\n\n")
 simple_recursion(10)
 
 print("raise_power\n\n")
@@ -116,7 +116,7 @@ Programs are divided into three sections of memory, the Stack, the Heap, and Sta
 The Heap and Static memory are not important right now.
 Stack memory is a stack data structure meaning it follows the FILO (First In Last Out) rule.
 By convention, programs use the stack to run functions by pushing parameters and other data to the stack.
-Any time a new function is called, all of the data that function needs is pushed to the process stack.
+Any time a new function is called, all of the data that function needs to execute is pushed to the process stack.
 This collection of memory reserved for a function is known as a Stack Frame.
 
 To analyze a function, simply keep track of the current stack frame and the variables within it
@@ -127,27 +127,30 @@ Analysis of fib function:
 
 Stack Trace
 
-Level 1: fib(5) calls fib(4) and fib(3)
+Level 1: fib(5) calls fib(4) and fib(3) 
 
-Level 2: fib(4) call fib(3) and fib(2)
+Level 2: fib(4) calls fib(3) and fib(2)
 Level 2: fib(3) calls fib(2) and fib(1)
 
-Level 3: fib(4) calls fib(3) and fib(2)
 Level 3: fib(3) calls fib(2) and fib(1)
+Level 3: fib(2) returns 1
+Level 3: fib(2) returns 1
+Level 3: fib(1) returns 1
 
-Level 4: fib(3) calls fib(2) and fib(1)
+Level 4: fib(3) calls fib(2) and fib(1) 
+Level 4: fib(2) and fib(1) returns 1
 
-| Stack Level | Function Called | Stack Frame Value | Returned Value       |
-|-----------|-----------------|-------------------|------------------------|
-| 1         | fib(5)          | n=5               | return fib(4) + fib(3) |
-| 2         | fib(4)          | n=4               | return fib(3) + fib(2) |
-| 2         | fib(3)          | n=3               | return fib(2) + fib(1) |
-| 3         | fib(3)          | n=3               | return fib(2) + fib(1) |
-| 3         | fib(2)          | n=2               | return 1               |
-| 3         | fib(2)          | n=2               | return 1               |
-| 3         | fib(1)          | n=1               | return 1               |
-| 4         | fib(2)          | n=2               | return 1               |
-| 4         | fib(1)          | n=1               | return 1               |
+| Stack Level | Function Called | Stack Frame Value | Returned Value         |
+|-------------|-----------------|-------------------|------------------------|
+| 1           | fib(5)          | n=5               | return fib(4) + fib(3) |
+| 2           | fib(4)          | n=4               | return fib(3) + fib(2) |
+| 2           | fib(3)          | n=3               | return fib(2) + fib(1) |
+| 3           | fib(3)          | n=3               | return fib(2) + fib(1) |
+| 3           | fib(2)          | n=2               | return 1               |
+| 3           | fib(2)          | n=2               | return 1               |
+| 3           | fib(1)          | n=1               | return 1               |
+| 4           | fib(2)          | n=2               | return 1               |
+| 4           | fib(1)          | n=1               | return 1               |
 
 
 Working back up the tree
@@ -208,6 +211,20 @@ Similarities between a Dictionary Search and Binary Search:
 - Next you typically divide the chosen half again and compare the new page to the target word you are searching for.
 - This repeats until you either find the word or are unsuccessful in the word search. 
 
+Analysis of Binary Search
+
+- In the best case, the key is found on the first try i.e. (low+high)/2 = key
+- In the worst case, the key is not in the array or is at an endpoint of the array. Here,
+the n elements must be divided by 2 until there is just one element, and then that last
+element must be compared with the key. An easy way to find the number of comparisons in the worst
+is to round n up to the next power of 2 and take the exponent. For example, if the number of elements 
+n = 32 = 2^5, then the number of comparisons refers to the number of passes through the search loop of 
+the above algorithm-namely, the outer else piece of code.
+- Due to an uneven split in the algorithm,
+there's an interesting wrinkle when discussing the worst case of a binary search that uses the above algorithm. 
+The worst case can be an endpoint or a value not in the array.
+With this being said, not all endpoints or values that are not in the array are the worst case.
+
 """
 print(binary_search_explanation)
 
@@ -219,6 +236,7 @@ def binary_search(arr, target, low, high):
         return -1
     # find mid-point of array
     # forcing the midpoint to an integer will always round the midpoint to the left of an uneven list.
+    # lossy conversion is not always bad.
     mid = int(low + (high - low) / 2)
     # return index if target is found
     if(arr[mid] == target):
@@ -235,3 +253,8 @@ sorted_list = [1,3,5,7,9]
 binary_target_number = 3
 
 print(f"The target number is at index: {binary_search(sorted_list, binary_target_number, 0, len(sorted_list) - 1)}\n\n")
+
+
+# Python in operator
+print("in operator\n\n")
+in_operator_explanation = """The in operator in Python is a quick way to perform a linear search on a list."""

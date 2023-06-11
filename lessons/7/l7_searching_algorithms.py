@@ -268,11 +268,11 @@ It will return true if the value is in the list or false if the value is not in 
 
 simple_list = [1, 3, 4, 78, 99, -2, -100]
 simple_target_value = 1
-value_not_in_list = 1.5
+bad_value = 1.5
 
 print(f"Is {simple_target_value} in {simple_list}? {simple_target_value in simple_list}\n\n")
 
-if not value_not_in_list in simple_list:
-    print(f"Target value: {simple_target_value} is not in {simple_list}\n\n")
+if not bad_value in simple_list:
+    print(f"{bad_value} is not in {simple_list}\n\n")
 
 

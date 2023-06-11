@@ -257,4 +257,22 @@ print(f"The target number is at index: {binary_search(sorted_list, binary_target
 
 # Python in operator
 print("in operator\n\n")
-in_operator_explanation = """The in operator in Python is a quick way to perform a linear search on a list."""
+in_operator_explanation = """The in operator in Python is a quick way to perform a linear search on a list. 
+Basic Syntax:
+    if x in list:
+        pass
+It checks if the target value on the left is contained within the iterable on the right.
+It will return true if the value is in the list or false if the value is not in the list.
+
+"""
+
+simple_list = [1, 3, 4, 78, 99, -2, -100]
+simple_target_value = 1
+value_not_in_list = 1.5
+
+print(f"Is {simple_target_value} in {simple_list}? {simple_target_value in simple_list}\n\n")
+
+if not value_not_in_list in simple_list:
+    print(f"Target value: {simple_target_value} is not in {simple_list}\n\n")
+
+

@@ -23,7 +23,7 @@ def valid_sub(enc, word, subs):
 
 
 def create_sub(enc, word, subs):
-    """Create a new substitucion dict where the missing substitutions
+    """Create a new substitution dict where the missing substitutions
     to got from enc to word are added"""
     new_subs = copy(subs)
 

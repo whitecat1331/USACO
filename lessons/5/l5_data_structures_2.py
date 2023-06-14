@@ -149,16 +149,14 @@ Each key-value pair is separated with a comma ,.
 
 sys.stdout.write(dictionary_explanation)
 
-# Dictionary Examples
+# Dictionary Indexing
 sys.stdout.write("Simple Dictionary Examples\n")
 my_dict = {"key": "value", "another_key": "another_value"}
 sys.stdout.write(my_dict["key"] + '\n') # prints value
 my_dict["key"] = "some_value" # change key to some_value
 sys.stdout.write(my_dict["key"] + "\n\n") # prints some_value
 
-
-
-# Dictionary Indexing
+# Dictionary Examples
 sys.stdout.write("Dictionary Indexing\n")
 avengers = {"Spider-Man": "Peter Parker", "Iron-Man": "Tony Stark","Hulk": "Bruce Banner"}
 
@@ -192,7 +190,7 @@ If the value you initially index into is another container type, simply index in
 into the individual value within the entire dictionary.
 There is not limit to the amount of information that is nested within a dictionary, in fact some JSON dictionaries can have five or six nested items.
 With so much nesting, it can be easy to get lost in a large dictionary.
-Luckily, python gives us other tools to effectively navigate a dictionary in our program.
+Luckily, Python gives us other tools to effectively navigate a dictionary in our program.
 
 
 Most manual dictionary indexing is done with the developer knowing the values to index to.
